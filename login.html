@@ -1,0 +1,88 @@
+<h2>Set Up the Facebook SDK for Javascript</h2>
+  <div class="_4-u3 _2iiw _61jf _2iiv" id="step2_web"><div class="_4-u3 _5rva _mog _1shi _1l7c"><div class="clearfix"><span class="lfloat _ohe _c24 _50f4 _50f7"><span><span class="_1l7d _50f9 _2iel">2. Set Up the Facebook SDK for Javascript</span></span></span><div class="_5s5u rfloat _ohf"><span class="_1shl"></span></div></div></div><div class="_4-u3 _3a8w _1shj"><div><div class="_3ii"> The Facebook SDK for JavaScript doesn't have any standalone files that need to be downloaded or installed, instead you simply need to include a short piece of regular JavaScript in your HTML that will asynchronously load the SDK into your pages. The async load means that it does not block loading other elements of your page. </div><div class="_3ii"></div><div class="_3ii"><div class="_4-u2 _57mb _1u44 noMargin noBorder sourceCode _174u _3ip _4-u8" id="u_0_3t_vp"><pre class="prettyprint prettyprinted" style=""><span class="tag">&lt;script&gt;</span><span class="pln">
+  window</span><span class="pun">.</span><span class="pln">fbAsyncInit </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    FB</span><span class="pun">.</span><span class="pln">init</span><span class="pun">({</span><span class="pln">
+      appId      </span><span class="pun">:</span><span class="pln"> </span><span class="str">'{your-app-id}'</span><span class="pun">,</span><span class="pln">
+      cookie     </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+      xfbml      </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+      version    </span><span class="pun">:</span><span class="pln"> </span><span class="str">'{api-version}'</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+      
+    FB</span><span class="pun">.</span><span class="typ">AppEvents</span><span class="pun">.</span><span class="pln">logPageView</span><span class="pun">();</span><span class="pln">   
+      
+  </span><span class="pun">};</span><span class="pln">
+
+  </span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">d</span><span class="pun">,</span><span class="pln"> s</span><span class="pun">,</span><span class="pln"> id</span><span class="pun">){</span><span class="pln">
+     </span><span class="kwd">var</span><span class="pln"> js</span><span class="pun">,</span><span class="pln"> fjs </span><span class="pun">=</span><span class="pln"> d</span><span class="pun">.</span><span class="pln">getElementsByTagName</span><span class="pun">(</span><span class="pln">s</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">];</span><span class="pln">
+     </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">d</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="pln">id</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">return</span><span class="pun">;}</span><span class="pln">
+     js </span><span class="pun">=</span><span class="pln"> d</span><span class="pun">.</span><span class="pln">createElement</span><span class="pun">(</span><span class="pln">s</span><span class="pun">);</span><span class="pln"> js</span><span class="pun">.</span><span class="pln">id </span><span class="pun">=</span><span class="pln"> id</span><span class="pun">;</span><span class="pln">
+     js</span><span class="pun">.</span><span class="pln">src </span><span class="pun">=</span><span class="pln"> </span><span class="str">"https://connect.facebook.net/en_US/sdk.js"</span><span class="pun">;</span><span class="pln">
+     fjs</span><span class="pun">.</span><span class="pln">parentNode</span><span class="pun">.</span><span class="pln">insertBefore</span><span class="pun">(</span><span class="pln">js</span><span class="pun">,</span><span class="pln"> fjs</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}(</span><span class="pln">document</span><span class="pun">,</span><span class="pln"> </span><span class="str">'script'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'facebook-jssdk'</span><span class="pun">));</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></pre><div class="_174v"><span><a tabindex="-1" href="#" role="button" id="u_0_3u_xZ"><span label="Copy Code" value="
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = &quot;https://connect.facebook.net/en_US/sdk.js&quot;;
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>" tooltipsuccess="Code Copied!" tooltipsuccessduration="1000" type="string" tabindex="0" class="_xd6" data-pitloot-persistonclick="true" role="button" data-hover="tooltip" data-tooltip-content="Copy Code to Clipboard" id="js_15x"><div class="_2lj1">Copy Code</div></span></a></span></div></div></div></div></div><div class="_4-u3 _3a8w _3bc1"><div class="_6a rfloat"><button value="1" class="_42ft _4jy0 _zno _4jy4 _517h _51sy" type="submit">Back</button><button value="1" class="_42ft _4jy0 _znn _4jy4 _4jy1 selected _51sy" type="submit">Next</button></div></div></div>
+
+<h2>Check Login Status</h2>
+<div class="_4-u3 _3a8w _1shj"><div><div class="_3ii"> The first step when loading your web page is figuring out if a person is already logged into your app with Facebook login. You start that process with a call to <code class="_3jb">FB.getLoginStatus</code>. That function will trigger a call to Facebook to get the login status and call your callback function with the results. </div><div class="_3ii"> Taken from the sample code above, here's some of the code that's run during page load to check a person's login status: <div class="_4-u2 _57mb _1u44 noMargin noBorder sourceCode _174u _3ip _4-u8" id="u_0_3v_YP"><pre class="prettyprint prettyprinted" style=""><span class="pln">FB</span><span class="pun">.</span><span class="pln">getLoginStatus</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    statusChangeCallback</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span></pre><div class="_174v"><span><a tabindex="-1" href="#" role="button" id="u_0_3w_vA"><span label="Copy Code" value="
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});" tooltipsuccess="Code Copied!" tooltipsuccessduration="1000" type="string" tabindex="0" class="_xd6" data-pitloot-persistonclick="true" role="button" data-hover="tooltip" data-tooltip-content="Copy Code to Clipboard"><div class="_2lj1">Copy Code</div></span></a></span></div></div></div><div class="_3ii"> The <code class="_3jb">response</code> object that's provided to your callback contains a number of fields: <div class="_4-u2 _57mb _1u44 noMargin noBorder sourceCode _174u _3ip _4-u8" id="u_0_3x_Q7"><pre class="prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    status</span><span class="pun">:</span><span class="pln"> </span><span class="str">'connected'</span><span class="pun">,</span><span class="pln">
+    authResponse</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        accessToken</span><span class="pun">:</span><span class="pln"> </span><span class="str">'...'</span><span class="pun">,</span><span class="pln">
+        expiresIn</span><span class="pun">:</span><span class="str">'...'</span><span class="pun">,</span><span class="pln">
+        signedRequest</span><span class="pun">:</span><span class="str">'...'</span><span class="pun">,</span><span class="pln">
+        userID</span><span class="pun">:</span><span class="str">'...'</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre><div class="_174v"><span><a tabindex="-1" href="#" role="button" id="u_0_3y_uJ"><span label="Copy Code" value="
+{
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}" tooltipsuccess="Code Copied!" tooltipsuccessduration="1000" type="string" tabindex="0" class="_xd6" data-pitloot-persistonclick="true" role="button" data-hover="tooltip" data-tooltip-content="Copy Code to Clipboard"><div class="_2lj1">Copy Code</div></span></a></span></div></div></div><div class="_3ii"><code class="_3jb">status</code> specifies the login status of the person using the app. The status can be one of the following: <ul class="uiList _4of _4kg"><li><div class="fcb"><code class="_3jb">connected</code> - the person is logged into Facebook, and has logged into your app. </div></li><li><div class="fcb"><code class="_3jb">not_authorized</code> - the person is logged into Facebook, but has not logged into your app. </div></li><li><div class="fcb"><code class="_3jb">unknown</code> - the person is not logged into Facebook, so you don't know if they've logged into your app or <code class="_3jb">FB.logout()</code> was called before and therefore, it cannot connect to Facebook. </div></li></ul></div><div class="_3ii"><code class="_3jb">authResponse</code> is included if the status is <code class="_3jb">connected</code> and is made up of the following: <ul class="uiList _4of _4kg"><li><div class="fcb"><code class="_3jb">accessToken</code> - contains an access token for the person using the app. </div></li><li><div class="fcb"><code class="_3jb">expiresIn</code> - indicates the UNIX time when the token expires and needs to be renewed. </div></li><li><div class="fcb"><code class="_3jb">signedRequest</code> - a signed parameter that contains information about the person using the app. </div></li><li><div class="fcb"><code class="_3jb">userID</code> - the ID of the person using the app. </div></li></ul></div><div class="_3ii"> Once your app knows the login status of the person using it, it can do one of the following: <ul class="uiList _4of _4kg"><li><div class="fcb"> If the person is logged into Facebook and your app, redirect them to your app's logged in experience. </div></li><li><div class="fcb"> If the person isn't logged into your app, or isn't logged into Facebook, prompt them with the Login dialog with <code class="_3jb">FB.login()</code> or show them the Login Button. </div></li></ul></div></div></div>
+
+<h2>Add the Facebook Login Button</h2>
+<div class="_4-u3 _3a8w _1shj"><div><div class="_3ii"> Including the Login Button into your page is easy. Visit the <a href="https://developers.facebook.com/docs/plugins/login-button">documentation for the login button</a> and set the button up the way you want. Then click <i>Get Code</i> and it will show you the code you need to display the button on your page. </div><div class="_3ii"> The <code class="_3jb">onlogin</code> attribute on the button to set up a JavaScript callback that checks the login status to see if the person logged in successfully: <div class="_4-u2 _57mb _1u44 noMargin noBorder sourceCode _174u _3ip _4-u8" id="u_0_3z_9E"><pre class="prettyprint prettyprinted" style=""><span class="tag">&lt;fb:login-button</span><span class="pln"> 
+  </span><span class="atn">scope</span><span class="pun">=</span><span class="atv">"public_profile,email"</span><span class="pln">
+  </span><span class="atn">onlogin</span><span class="pun">=</span><span class="atv">"</span><span class="pln">checkLoginState</span><span class="pun">();</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;/fb:login-button&gt;</span></pre><div class="_174v"><span><a tabindex="-1" href="#" role="button" id="u_0_40_W5"><span label="Copy Code" value="
+<fb:login-button 
+  scope=&quot;public_profile,email&quot;
+  onlogin=&quot;checkLoginState();&quot;>
+</fb:login-button>" tooltipsuccess="Code Copied!" tooltipsuccessduration="1000" type="string" tabindex="0" class="_xd6" data-pitloot-persistonclick="true" role="button" data-hover="tooltip" data-tooltip-content="Copy Code to Clipboard" id="js_3jj" aria-describedby="js_15w"><div class="_2lj1">Copy Code</div></span></a></span></div></div></div><div class="_3ii"> This is the callback. It calls <code class="_3jb">FB.getLoginStatus()</code> to get the most recent login state. (<code class="_3jb">statusChangeCallback()</code> is a function that's part of the example that processes the response.) <div class="_4-u2 _57mb _1u44 noMargin noBorder sourceCode _174u _3ip _4-u8" id="u_0_41_pT"><pre class="prettyprint prettyprinted" style=""><span class="kwd">function</span><span class="pln"> checkLoginState</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  FB</span><span class="pun">.</span><span class="pln">getLoginStatus</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    statusChangeCallback</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></pre><div class="_174v"><span><a tabindex="-1" href="#" role="button" id="u_0_42_Kz"><span label="Copy Code" value="
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}" tooltipsuccess="Code Copied!" tooltipsuccessduration="1000" type="string" tabindex="0" class="_xd6" data-pitloot-persistonclick="true" role="button" data-hover="tooltip" data-tooltip-content="Copy Code to Clipboard" id="js_3ie" aria-describedby="js_15w"><div class="_2lj1">Copy Code</div></span></a></span></div></div></div></div></div>
+
